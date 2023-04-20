@@ -7,40 +7,34 @@ if [[ ! -d ~/.config/wallpaper/ ]]; then
   mkdir -p ~/.config/wallpaper/
 fi
 
-function setWallpaper(){
+function setWallpaperAndReload(){
   nitrogen --set-zoom-fill ~/.config/wallpaper/image
+  i3-msg reload
+  i3-msg restart
 }
 
 function changeToRed(){
   cp $themes/red/config ~/.config/i3/
   cp $themes/red/image ~/.config/wallpaper/
-  setWallpaper
-  i3-msg reload
-  i3-msg restart
+  setWallpaperAndReload
 }
 
 function changeToBlue(){
   cp $themes/blue/config ~/.config/i3/
   cp $themes/blue/image ~/.config/wallpaper/
-  setWallpaper
-  i3-msg reload
-  i3-msg restart
+  setWallpaperAndReload
 }
 
 function changeToGreen(){
   cp $themes/green/config ~/.config/i3/
   cp $themes/green/image ~/.config/wallpaper/
-  setWallpaper
-  i3-msg reload
-  i3-msg restart
+  setWallpaperAndReload
 }
 
 function changeToPurple(){
   cp $themes/purple/config ~/.config/i3/
   cp $themes/purple/image ~/.config/wallpaper/
-  setWallpaper
-  i3-msg reload
-  i3-msg restart
+  setWallpaperAndReload
 }
 
 menu() {
