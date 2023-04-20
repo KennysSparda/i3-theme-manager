@@ -1,8 +1,14 @@
 #!/usr/bin/bash
 
-themes="/home/swygax/.config/mytheme/themes"
+themes=/home/swygax/.config/i3theme/themes
+
+# Check if directory exists
+if [[ ! -d ~/.config/wallpaper/ ]]; then
+  mkdir -p ~/.config/wallpaper/
+fi
+
 function setWallpaper(){
-  sh ./config
+  nitrogen --set-zoom-fill ~/.config/wallpaper/image
 }
 
 function changeToRed(){
