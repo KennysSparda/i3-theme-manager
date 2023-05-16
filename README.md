@@ -58,7 +58,7 @@ source ~/.config/i3-theme-manager/i3-theme-manager.sh
 ```
 
 ## Usage and Customization
-
+[![Vídeo](https://img.youtube.com/vi/OVR18_QjbZU/0.jpg)](https://youtu.be/OVR18_QjbZU)
 
 ### Example: Copying i3 Configuration and Adding an Image
 To create a new theme, follow these steps:
