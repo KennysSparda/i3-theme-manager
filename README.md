@@ -2,7 +2,7 @@
 
 
 ## License
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/KennysSparda/i3-theme-manager/blob/main/LICENSE) 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Overview
 The i3wm Theme Manager was created to facilitate the management of i3 Window Manager configuration files, both in terms of aesthetics and functionality. With this tool, you can easily change themes, including settings related to other monitors and their sizes.
@@ -87,7 +87,7 @@ We welcome contributions from the community and appreciate any feedback or sugge
 ## First-time Execution
 After completing the installation, run the i3wm Theme Manager for the first time using the following command:
 ```
-~/.config/i3-theme-manager/i3-theme-manager.sh
+i3-theme-manager.sh
 ```
 
 Be sure to read the documentation provided with the i3wm Theme Manager for more information on how to use all available features. If you have any questions or suggestions, feel free to contact us.
