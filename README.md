@@ -12,7 +12,7 @@ To install the i3wm Theme Manager, follow the instructions below:
 
 1. Clone the repository:
 ```
-git clone https://github.com/KennysSparda/i3-theme-manager.git ~/.config
+git clone https://github.com/KennysSparda/i3-theme-manager.git ~/.config/i3-theme-manager
 ```
 
 2. Save your current i3 configuration, as the i3wm Theme Manager will overwrite the `~/.config/i3/config` file with the corresponding file for the selected theme.
