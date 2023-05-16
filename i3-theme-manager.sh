@@ -1,38 +1,44 @@
 #!/usr/bin/bash
 
-themes=/home/swygax/.config/i3-theme-manager/themes
+pwd=/home/swygax/.config/i3-theme-manager
+themes=$pwd/themes
 
 # Check if directory exists
 if [[ ! -d ~/.config/wallpaper/ ]]; then
   mkdir -p ~/.config/wallpaper/
-fi
+fi 
 
 function setWallpaperAndReload(){
   nitrogen --set-zoom-fill ~/.config/wallpaper/image
+  $pwd/monitor-sizes.sh
   i3-msg reload
   i3-msg restart
 }
 
 function changeToRed(){
-  cp $themes/red/config ~/.config/i3/
+  cp $themes/red/config $pwd/config_template
+  $pwd/monitor-sizes.sh
   cp $themes/red/image ~/.config/wallpaper/
   setWallpaperAndReload
 }
 
 function changeToBlue(){
-  cp $themes/blue/config ~/.config/i3/
+  cp $themes/blue/config $pwd/config_template
+  $pwd/monitor-sizes.sh
   cp $themes/blue/image ~/.config/wallpaper/
   setWallpaperAndReload
 }
 
 function changeToGreen(){
-  cp $themes/green/config ~/.config/i3/
+  cp $themes/green/config $pwd/config_template
+  $pwd/monitor-sizes.sh
   cp $themes/green/image ~/.config/wallpaper/
   setWallpaperAndReload
 }
 
 function changeToPurple(){
-  cp $themes/purple/config ~/.config/i3/
+  cp $themes/purple/config $pwd/config_template
+  ./monitor-sizes.sh
   cp $themes/purple/image ~/.config/wallpaper/
   setWallpaperAndReload
 }

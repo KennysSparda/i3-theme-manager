@@ -1,7 +1,8 @@
 set $mod Mod4
-exec_always --no-startup-id xrandr --auto --output HDMI-A-0 --mode 1920x1080 --primary
+exec_always --no-startup-id xrandr --auto --output {HDMI_MONITOR} --mode {HDMI_RESOLUTION} --primary
 
-exec_always --no-startup-id xrandr --auto --output VGA-0 --mode 1024x768 --left-of HDMI-A-0
+exec_always --no-startup-id xrandr --auto --output {VGA_MONITOR} --mode {VGA_RESOLUTION} --left-of {HDMI_MONITOR}
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
