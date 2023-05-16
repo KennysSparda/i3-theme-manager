@@ -2,7 +2,7 @@
 
 
 ## License
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/KennysSparda/i3-theme-manager/blob/main/License) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/KennysSparda/i3-theme-manager/blob/main/LICENSE) 
 
 ## Overview
 The i3wm Theme Manager was created to facilitate the management of i3 Window Manager configuration files, both in terms of aesthetics and functionality. With this tool, you can easily change themes, including settings related to other monitors and their sizes.
