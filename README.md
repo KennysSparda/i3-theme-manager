@@ -43,7 +43,7 @@ cp ~/.config/i3/config ~/.config/i3-theme-manager/themes/new-theme
 Add the following line to your `~/.config/i3-theme-manager/themes/new-theme/config` 
 ```
 # start i3-theme-manager
-bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager
+bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager.sh
 ```
 
 ### Contribution

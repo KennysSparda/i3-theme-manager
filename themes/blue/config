@@ -41,7 +41,7 @@ bindsym $mod+x exec konsole
 # start google-chrome
 bindsym $mod+n exec google-chrome-stable
 # start i3-theme-manager
-bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager
+bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
