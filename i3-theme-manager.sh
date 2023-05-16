@@ -1,63 +1,34 @@
 #!/usr/bin/bash
 
-pwd=~/.config/i3-theme-manager
-themes=$pwd/themes
+theme_manager_dir=~/.config/i3-theme-manager
+themes_dir=$theme_manager_dir/themes
+wallpaper_dir=~/.config/wallpaper
 
-# Check if directory exists
-if [[ ! -d ~/.config/wallpaper/ ]]; then
-  mkdir -p ~/.config/wallpaper/
-fi 
+# Verificar se o diretório existe
+mkdir -p $wallpaper_dir
 
-function setWallpaperAndReload(){
-  nitrogen --set-zoom-fill ~/.config/wallpaper/image
-  $pwd/monitor-sizes.sh
+function setWallpaperAndReload() {
+  nitrogen --set-zoom-fill "$wallpaper_dir/image"
+  $theme_manager_dir/monitor-sizes.sh
   i3-msg reload
   i3-msg restart
 }
 
-function changeToRed(){
-  cp $themes/red/config $pwd/config_template
-  $pwd/monitor-sizes.sh
-  cp $themes/red/image ~/.config/wallpaper/
-  setWallpaperAndReload
-}
-
-function changeToBlue(){
-  cp $themes/blue/config $pwd/config_template
-  $pwd/monitor-sizes.sh
-  cp $themes/blue/image ~/.config/wallpaper/
-  setWallpaperAndReload
-}
-
-function changeToGreen(){
-  cp $themes/green/config $pwd/config_template
-  $pwd/monitor-sizes.sh
-  cp $themes/green/image ~/.config/wallpaper/
-  setWallpaperAndReload
-}
-
-function changeToPurple(){
-  cp $themes/purple/config $pwd/config_template
-  ./monitor-sizes.sh
-  cp $themes/purple/image ~/.config/wallpaper/
+function changeTheme() {
+  theme=$1
+  cp "$themes_dir/$theme/config" "$theme_manager_dir/config_template"
+  $theme_manager_dir/monitor-sizes.sh
+  cp "$themes_dir/$theme/image" "$wallpaper_dir/"
   setWallpaperAndReload
 }
 
 menu() {
-  option=$(zenity --list --height="300" --title="Change theme" --column="Themes" "Red" "Blue" "Green" "Purple" "Exit")
+  options=("red" "blue" "green" "purple" "Exit")
+  theme=$(zenity --list --height="300" --title="Change theme" --column="Themes" "${options[@]}")
 
-  case $option in
-    Red)
-      changeToRed
-      ;;
-    Blue)
-      changeToBlue
-      ;;
-    Green)
-      changeToGreen
-      ;;
-    Purple)
-      changeToPurple
+  case $theme in
+    red|blue|green|purple)
+      changeTheme "$theme"
       ;;
     Exit)
       exit -1
@@ -67,4 +38,5 @@ menu() {
       ;;
   esac
 }
+
 menu
