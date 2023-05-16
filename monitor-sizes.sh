@@ -1,7 +1,9 @@
 #!/bin/bash
 
+pwd=~/.config/i3-theme-manager
+
 # Leitura das configurações dos monitores
-xrandr > display_config.txt
+xrandr > $pwd/display_config.txt
 
 # Função para obter o nome do monitor e a resolução
 get_monitor_info() {
@@ -50,6 +52,6 @@ echo "VGA_RESOLUTION: $VGA_RESOLUTION"
 # VGA_RESOLUTION="1024x768"
 
 # Geração do arquivo config substituindo todas as ocorrências pelo valor estático declarado acima
-sed "s/{HDMI_MONITOR}/$HDMI_MONITOR/g; s/{HDMI_RESOLUTION}/$HDMI_RESOLUTION/g; s/{VGA_MONITOR}/$VGA_MONITOR/g; s/{VGA_RESOLUTION}/$VGA_RESOLUTION/g" ./config_template > ~/.config/i3/config 
+sed "s/{HDMI_MONITOR}/$HDMI_MONITOR/g; s/{HDMI_RESOLUTION}/$HDMI_RESOLUTION/g; s/{VGA_MONITOR}/$VGA_MONITOR/g; s/{VGA_RESOLUTION}/$VGA_RESOLUTION/g" $pwd/config_template > ~/.config/i3/config 
 
 echo "Arquivo monitor-sizes.sh gerado com sucesso!"
