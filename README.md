@@ -87,7 +87,7 @@ We welcome contributions from the community and appreciate any feedback or sugge
 ## First-time Execution
 After completing the installation, run the i3wm Theme Manager for the first time using the following command:
 ```
-~/.config/i3-theme-manager/i3-theme-manager.sh
+i3-theme-manager.sh
 ```
 
 Be sure to read the documentation provided with the i3wm Theme Manager for more information on how to use all available features. If you have any questions or suggestions, feel free to contact us.
