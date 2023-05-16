@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-pwd=/home/swygax/.config/i3-theme-manager
+pwd=~/.config/i3-theme-manager
 themes=$pwd/themes
 
 # Check if directory exists
