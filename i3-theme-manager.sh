@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-themes=/home/swygax/.config/i3-theme-manager/themes
+themes=~/.config/i3-theme-manager/themes
 
 # Check if directory exists
 if [[ ! -d ~/.config/wallpaper/ ]]; then
