@@ -40,8 +40,8 @@ bindsym $mod+Return exec konsole
 bindsym $mod+x exec konsole
 # start google-chrome
 bindsym $mod+n exec google-chrome-stable
-# start i3-themes
-bindsym $mod+t exec bash /home/swygax/.config/i3theme/changeTheme.sh
+# start i3-theme-manager
+bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager
 
 # kill focused window
 bindsym $mod+Shift+q kill
