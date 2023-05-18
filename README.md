@@ -10,11 +10,13 @@ The i3wm Theme Manager was created to facilitate the management of i3 Window Man
 ## Dependencies
 The i3wm Theme Manager has the following dependencies:
 
-- **Nitrogen**: A utility that manages desktop wallpapers in Linux, providing an easy way to customize and personalize your desktop background.
-- **Zenity**: A tool that creates simple graphical interfaces in Linux command-line scripts, enhancing user interaction.
-- **Picom**: An X11 window compositor utility that enhances the visual experience of graphical interfaces with features like transparency, shading, and visual effects.
+- **i3-gaps**: A fork of the i3 window manager with support for adjustable gaps between windows.
+- **Nitrogen**: A utility for setting and managing desktop wallpapers, providing an easy way to customize your desktop background.
+- **Zenity**: A tool that enables the creation of simple graphical interfaces in command-line scripts, making user interaction more convenient.
+- **Picom**: An X11 window compositor utility that enhances the user experience with visual effects, transparency, and shadowing.
 
-To install these dependencies on Debian-based systems, run the following command:
+### Installation
+To install the dependencies on Debian-based systems, run the following command:
 
 ```bash
 sudo apt-get update && sudo apt-get install i3-gaps nitrogen zenity picom
@@ -24,6 +26,12 @@ For Arch-based systems, use the following command:
 
 ```bash
 sudo pacman -Syu i3-gaps nitrogen zenity picom
+```
+
+On Fedora, execute the following command:
+
+```bash
+sudo dnf install i3-gaps nitrogen zenity picom
 ```
 
 ## Installation
