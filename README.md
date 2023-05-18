@@ -64,7 +64,7 @@ To create a new theme, follow these steps:
 mkdir -p ~/.config/i3-theme-manager/themes/my-new-theme
 ```
 
-2. Place an image file in the `~/.config/i3-theme-manager/themes/my-new-theme` directory. This image will be associated with the new theme.
+2. Place an image file with name "image" in the `~/.config/i3-theme-manager/themes/my-new-theme` directory. This image will be associated with the new theme.
 
 3. Add new entry on zenity menu for my-new-theme in `~/.config/i3-theme-manager/i3-theme-manager.sh` file:
 ```bash

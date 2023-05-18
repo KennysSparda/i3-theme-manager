@@ -19,7 +19,7 @@ function changeTheme() {
   $theme_manager_dir/monitor-sizes.sh
   $theme_manager_dir/apply-color.sh $theme
   cp /tmp/i3_config_template_2 ~/.config/i3/config
-  cp "$themes_dir/$theme/*" "$wallpaper_dir/image"
+  cp "$themes_dir/$theme/image" "$wallpaper_dir/"
   setWallpaperAndReload
 }
 
