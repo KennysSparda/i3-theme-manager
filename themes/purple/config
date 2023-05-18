@@ -9,7 +9,7 @@ font pango:Terminus $font-size
 
 ## SETTING I3 VARIABLES FOR COLOR SCHEME
 set $primary-color #ff00ff
-set $secondary-color #ffffff
+set $secondary-color #333333
 set $tertiary-color #000000
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -201,7 +201,9 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper/image
 
 # Define border size of windows
 # Distance of borders
-gaps inner 10
+gaps inner 8
+gaps outer 16
+smart_gaps on
 for_window [class=".*"] border pixel 2
 #                       indicator         child_border      text  
 client.focused          $primary-color    $primary-color    #ffffff $primary-color    $primary-color
@@ -218,3 +220,6 @@ bindsym Mod4+Shift+p exec setxkbmap -layout br
 
 # English US
 bindsym Mod4+Shift+u exec setxkbmap -layout us
+
+# Effects
+exec picom -b

@@ -201,8 +201,10 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper/image
 
 # Define border size of windows
 # Distance of borders
-gaps inner 10
-for_window [class=".*"] border pixel 2
+gaps inner 8
+gaps outer 16
+smart_gaps on
+for_window [class=".*"] border pixel 3
 #                       indicator         child_border      text  
 client.focused          $primary-color    $primary-color    #ffffff $primary-color    $primary-color
 client.focused_inactive $tertiary-color   $tertiary-color   #ffffff $tertiary-color   $tertiary-color
@@ -218,3 +220,6 @@ bindsym Mod4+Shift+p exec setxkbmap -layout br
 
 # English US
 bindsym Mod4+Shift+u exec setxkbmap -layout us
+
+# Effects 
+exec picom -b
