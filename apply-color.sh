@@ -21,6 +21,12 @@ case $theme in
     secundarycolor="#333333"
     tertiarycolor="#000000"
     ;;
+  # CREATE YOUR OWN PALETE HERE
+  # my-new-theme)
+  #   primarycolor="#ffff00"
+  #   secundarycolor="#333333"
+  #   tertiarycolor="#000000"
+  #   ;;
   *)
     echo "Error 42"
     exit -1
