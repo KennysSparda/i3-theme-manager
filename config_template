@@ -1,16 +1,16 @@
 set $mod Mod4
-exec_always --no-startup-id xrandr --auto --output {HDMI_MONITOR} --mode {HDMI_RESOLUTION} --primary
+exec_always --no-startup-id xrandr --auto --output {MONITOR1} --mode {RESOLUTION1} --primary
 
-exec_always --no-startup-id xrandr --auto --output {VGA_MONITOR} --mode {VGA_RESOLUTION} --left-of {HDMI_MONITOR}
+exec_always --no-startup-id xrandr --auto --output {MONITOR2} --mode {RESOLUTION2} --left-of {MONITOR1}
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Terminus $font-size
 
 ## SETTING I3 VARIABLES FOR COLOR SCHEME
-set $primary-color #00ff00
-set $secondary-color #ffffff
-set $tertiary-color #000000
+set $primary-color {PRIMARYCOLOR}
+set $secondary-color {SECUNDARYCOLOR}
+set $tertiary-color {TERTIARYCOLOR}
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -204,7 +204,7 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper/image
 gaps inner 8
 gaps outer 16
 smart_gaps on
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 #                       indicator         child_border      text  
 client.focused          $primary-color    $primary-color    #ffffff $primary-color    $primary-color
 client.focused_inactive $tertiary-color   $tertiary-color   #ffffff $tertiary-color   $tertiary-color
@@ -221,5 +221,5 @@ bindsym Mod4+Shift+p exec setxkbmap -layout br
 # English US
 bindsym Mod4+Shift+u exec setxkbmap -layout us
 
-# Effects 
+# Effects
 exec picom -b

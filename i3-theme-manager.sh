@@ -16,8 +16,9 @@ function setWallpaperAndReload() {
 
 function changeTheme() {
   theme=$1
-  cp "$themes_dir/$theme/config" "$theme_manager_dir/config_template"
   $theme_manager_dir/monitor-sizes.sh
+  $theme_manager_dir/apply-color.sh $theme
+  cp /tmp/i3_config_template_2 ~/.config/i3/config
   cp "$themes_dir/$theme/image" "$wallpaper_dir/"
   setWallpaperAndReload
 }
