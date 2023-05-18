@@ -38,39 +38,65 @@ sudo dnf install i3-gaps nitrogen zenity picom
 To install the i3wm Theme Manager, follow the instructions below:
 
 1. Clone the repository:
-```
+```bash
 git clone https://github.com/KennysSparda/i3-theme-manager.git ~/.config/i3-theme-manager
 ```
 
 2. Save your current i3 configuration, as the i3wm Theme Manager will overwrite the `~/.config/i3/config` file with the corresponding file for the selected theme.
 
 3. Run the program for the first time:
-```
+```bash
 ~/.config/i3-theme-manager/i3-theme-manager.sh
 ```
 
 4. Add the following line to your `.bashrc` or `.zshrc` file to allow running the script directly from the terminal:
-```
+```bash
 source ~/.config/i3-theme-manager/i3-theme-manager.sh
 ```
 
 ## Usage and Customization
 [![Vídeo](https://img.youtube.com/vi/OVR18_QjbZU/0.jpg)](https://youtu.be/OVR18_QjbZU)
 
-### Example: Copying i3 Configuration and Adding an Image
+### Example: Creation of new theme
 To create a new theme, follow these steps:
-1. Copy your current i3 configuration file to the `~/.config/i3-theme-manager/themes/new-theme` directory:
-```
-cp ~/.config/i3/config ~/.config/i3-theme-manager/themes/new-theme
+1. Create new directory on `~/.config/i3-theme-manager/themes/my-new-theme`
+```bash
+mkdir -p ~/.config/i3-theme-manager/themes/my-new-theme
 ```
 
-2. Place an image file in the `~/.config/i3-theme-manager/themes/new-theme` directory. This image will be associated with the new theme.
+2. Place an image file in the `~/.config/i3-theme-manager/themes/my-new-theme` directory. This image will be associated with the new theme.
 
-3. In the configuration file that goes by default there is a section that assigns the script to a combination on the keyboard
-Add the following line to your `~/.config/i3-theme-manager/themes/new-theme/config` 
+3. Add new entry on zenity menu for my-new-theme 
+```bash
+# [...]
+menu() {
+  options=("red" "blue" "green" "purple" "my-new-theme" "Exit")
+  theme=$(zenity --list --height="300" --title="Change theme" --column="Themes" "${options[@]}")
+
+  case $theme in
+    red|blue|green|purple|my-new-theme)
+# [...]
 ```
-# start i3-theme-manager
-bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager.sh
+
+4. In the configuration file `~/.config/i3-theme-manager/apply-color.sh` create new case for your favorite color palette, and add colors in hexadecimal format, like this:
+```bash
+  my-new-theme)
+    primarycolor="#ffff00"
+    secundarycolor="#333333"
+    tertiarycolor="#000000"
+    ;;
+```
+
+### Example: Configuration of monitors
+To change output and size of video, edit this fil: `~/.config/i3-theme-manager/monitor-sizes.sh`
+Change the values according to your preferences.
+To know about available videos enter the following command:
+```bash
+xrandr --listmonitor
+```
+To know all sizes determined video supports enter this:
+```bash
+xrandr
 ```
 
 ### Contribution
@@ -83,9 +109,10 @@ We welcome contributions from the community and appreciate any feedback or sugge
 
 ## First-time Execution
 After completing the installation, run the i3wm Theme Manager for the first time using the following command:
-```
+```bash
 i3-theme-manager.sh
 ```
+Or pressing Win+t
 
 Be sure to read the documentation provided with the i3wm Theme Manager for more information on how to use all available features. If you have any questions or suggestions, feel free to contact us.
 
