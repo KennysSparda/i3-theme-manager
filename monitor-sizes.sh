@@ -1,7 +1,7 @@
 #!/bin/bash
 
-monitor1="eDP"
-resolutuion1="1366x768"
+monitor1="eDP-1"
+resolution1="1920x1080"
 
 monitor2="HDMI-A-0"
 resolution2="1920x1080"
