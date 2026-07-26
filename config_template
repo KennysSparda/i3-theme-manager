@@ -1,7 +1,7 @@
 set $mod Mod4
-exec_always --no-startup-id xrandr --auto --output {MONITOR1} --mode {RESOLUTION1} --primary
+#exec_always --no-startup-id xrandr --auto --output {MONITOR1} --mode {RESOLUTION1} --primary
 
-exec_always --no-startup-id xrandr --auto --output {MONITOR2} --mode {RESOLUTION2} --left-of {MONITOR1}
+#exec_always --no-startup-id xrandr --auto --output {MONITOR2} --mode {RESOLUTION2} --left-of {MONITOR1}
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -178,7 +178,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 bar {
-  status_command i3status
+  # status_command 
+  status_command /home/swygax/.barrinha_rust/target/release/barra_json
   mode dock
   position top
   tray_output none
@@ -221,5 +222,17 @@ bindsym Mod4+Shift+p exec setxkbmap -layout br
 # English US
 bindsym Mod4+Shift+u exec setxkbmap -layout us
 
+# --- Captura de Tela Essencialista (Maim) ---
+
+# 1. Print Screen: Tira print da tela toda e salva em ~/Imagens
+bindsym Print exec --no-startup-id maim ~/Imagens/print-$(date +%Y%m%d_%H%M%S).png
+
+# 2. Shift + Print: Seleciona uma área para printar e salva em ~/Imagens
+bindsym Shift+Print exec --no-startup-id maim -s ~/Imagens/print-$(date +%Y%m%d_%H%M%S).png
+
+# 3. Ctrl + Shift + Print: Seleciona uma área e COPIA para a área de transferência (Ctrl+V)
+bindsym $mod+Shift+s exec --no-startup-id "maim -s | xclip -selection clipboard -t image/png"
+
+
 # Effects
-exec picom -b
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf -b
