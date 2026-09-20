@@ -41,10 +41,21 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec konsole
 bindsym $mod+x exec konsole
+
+# start bluetooth selector helper in dmenu
+bindsym $mod+o exec ~/Aux/dmenu-bt-connect.sh
+
 # start google-chrome
 bindsym $mod+n exec google-chrome-stable
+
+#start brave
+bindsym $mod+b exec brave
+
 # start i3-theme-manager
 bindsym $mod+t exec bash ~/.config/i3-theme-manager/i3-theme-manager.sh
+
+# mostra atalhos
+exec_always --no-startup-id "killall conky; conky -c ~/.config/conky/shortcuts.conf"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -205,8 +216,8 @@ exec_always --no-startup-id nitrogen --set-zoom-fill ~/.config/wallpaper/image
 
 # Define border size of windows
 # Distance of borders
-gaps inner 16
-gaps outer 16
+gaps inner 4
+gaps outer 2
 smart_gaps on
 for_window [class=".*"] border pixel 2
 #                       indicator         child_border      text  
